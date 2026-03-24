@@ -11,7 +11,7 @@ const contactLinks = [
   { icon: Mail, href: "mailto:johnlorezo14@gmail.com", label: "johnlorezo14@gmail.com" },
   { icon: Phone, href: "tel:+639932148165", label: "+63 993 214 8165" },
   { icon: Github, href: "https://github.com/jhnlrz", label: "github.com/jhnlrz" },
-  { icon: Linkedin, href: "https://www.linkedin.com/in/john-lorezo-769710363/", label: "linkedin.com/in/john-lorezo-769710363" },
+  { icon: Linkedin, href: "https://www.linkedin.com/in/john-lorezo-769710363/", label: "john-lorezo-769710363" },
   { icon: Facebook, href: "https://www.facebook.com/john.lorezo.14/", label: "facebook.com/john.lorezo.14" },
 ]
 
