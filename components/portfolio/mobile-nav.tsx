@@ -30,7 +30,7 @@ export function MobileNav() {
             className="fixed inset-0 bg-background/60 backdrop-blur-sm -z-10"
             onClick={() => setIsOpen(false)}
           />
-          <nav className="absolute top-14 right-0 bg-card border border-border rounded-lg p-4 min-w-[200px] shadow-xl">
+          <nav className="absolute top-14 right-0 bg-card border border-border rounded-lg p-4 min-w-50 shadow-xl">
             <ul className="flex flex-col gap-1">
               {navItems.map((item) => (
                 <li key={item.href}>

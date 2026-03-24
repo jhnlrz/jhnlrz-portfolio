@@ -25,7 +25,7 @@ export function HeroSection() {
           </div>
         </div>
         <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold tracking-tight text-balance">
-          John Lorezo
+          John A. Lorezo
         </h1>
         <h2 className="text-xl sm:text-2xl font-medium text-primary mt-2">
           Computer Science Student
