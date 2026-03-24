@@ -2,13 +2,14 @@
 
 import { useState } from "react"
 import Link from "next/link"
-import { Mail, Github, Linkedin, Facebook, Send } from "lucide-react"
+import { Mail, Github, Linkedin, Facebook, Send, Phone } from "lucide-react"
 import { Button } from "@/components/ui/button"
 import { Input } from "@/components/ui/input"
 import { Textarea } from "@/components/ui/textarea"
 
 const contactLinks = [
   { icon: Mail, href: "mailto:johnlorezo14@gmail.com", label: "johnlorezo14@gmail.com" },
+  { icon: Phone, href: "tel:+639932148165", label: "+63 993 214 8165" },
   { icon: Github, href: "https://github.com/jhnlrz", label: "github.com/jhnlrz" },
   { icon: Linkedin, href: "https://www.linkedin.com/in/john-lorezo-769710363/", label: "linkedin.com/in/john-lorezo-769710363" },
   { icon: Facebook, href: "https://www.facebook.com/john.lorezo.14/", label: "facebook.com/john.lorezo.14" },
