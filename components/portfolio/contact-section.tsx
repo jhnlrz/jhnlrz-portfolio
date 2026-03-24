@@ -65,13 +65,13 @@ export function ContactSection() {
   }
 
   return (
-    <section id="contact" className="py-20">
+    <section id="contact" className="py-20 animate-fade-up [animation-delay:.3s]">
       <h2 className="text-sm font-medium uppercase tracking-widest text-muted-foreground mb-8 lg:hidden">
         Contact
       </h2>
 
-      <div className="max-w-2xl">
-        <h3 className="text-2xl font-medium text-foreground mb-4">
+      <div className="max-w-2xl glass-card rounded-2xl p-6 sm:p-8 border-primary/20">
+        <h3 className="text-2xl font-medium text-foreground mb-4 text-shimmer">
           Get In Touch
         </h3>
         <p className="text-muted-foreground leading-relaxed mb-8">
@@ -92,7 +92,7 @@ export function ContactSection() {
                 required
                 value={formData.name}
                 onChange={(e) => setFormData({ ...formData, name: e.target.value })}
-                className="bg-card border-border focus:border-primary"
+                className="bg-card/70 border-border focus:border-primary transition-colors"
               />
             </div>
             <div className="space-y-2">
@@ -106,7 +106,7 @@ export function ContactSection() {
                 required
                 value={formData.email}
                 onChange={(e) => setFormData({ ...formData, email: e.target.value })}
-                className="bg-card border-border focus:border-primary"
+                className="bg-card/70 border-border focus:border-primary transition-colors"
               />
             </div>
           </div>
@@ -121,10 +121,10 @@ export function ContactSection() {
               required
               value={formData.message}
               onChange={(e) => setFormData({ ...formData, message: e.target.value })}
-              className="bg-card border-border focus:border-primary resize-none"
+              className="bg-card/70 border-border focus:border-primary resize-none transition-colors"
             />
           </div>
-          <Button type="submit" className="gap-2" disabled={isSubmitting}>
+          <Button type="submit" className="gap-2 shadow-lg shadow-primary/20 hover:shadow-primary/30 transition-shadow" disabled={isSubmitting}>
             {isSubmitting ? "Sending..." : "Send Message"}
             <Send className="w-4 h-4" />
           </Button>
@@ -149,9 +149,9 @@ export function ContactSection() {
                 href={link.href}
                 target={link.href.startsWith("mailto") ? undefined : "_blank"}
                 rel={link.href.startsWith("mailto") ? undefined : "noopener noreferrer"}
-                className="flex items-center gap-3 text-sm text-muted-foreground hover:text-foreground transition-colors group"
+                className="flex items-center gap-3 text-sm text-muted-foreground hover:text-foreground transition-all duration-300 group rounded-lg px-3 py-2 border border-transparent hover:border-primary/30 hover:bg-primary/10"
               >
-                <link.icon className="w-4 h-4 shrink-0" />
+                <link.icon className="w-4 h-4 shrink-0 text-primary/80 group-hover:scale-110 transition-transform duration-300" />
                 <span className="group-hover:underline underline-offset-4">{link.label}</span>
               </Link>
             ))}

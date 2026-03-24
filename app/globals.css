@@ -132,3 +132,77 @@
     background-attachment: fixed;
   }
 }
+
+@keyframes fade-up {
+  from {
+    opacity: 0;
+    transform: translateY(24px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes float-slow {
+  0%,
+  100% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-14px);
+  }
+}
+
+@keyframes pulse-glow {
+  0%,
+  100% {
+    box-shadow: 0 0 0 0 color-mix(in oklab, var(--primary) 0%, transparent);
+  }
+  50% {
+    box-shadow: 0 0 0 10px color-mix(in oklab, var(--primary) 18%, transparent);
+  }
+}
+
+@keyframes shimmer {
+  from {
+    background-position: 200% 50%;
+  }
+  to {
+    background-position: 0% 50%;
+  }
+}
+
+@layer utilities {
+  .animate-fade-up {
+    animation: fade-up 0.7s ease-out both;
+  }
+
+  .animate-float-slow {
+    animation: float-slow 6s ease-in-out infinite;
+  }
+
+  .animate-pulse-glow {
+    animation: pulse-glow 2.8s ease-in-out infinite;
+  }
+
+  .text-shimmer {
+    background-image: linear-gradient(
+      110deg,
+      color-mix(in oklab, var(--foreground) 86%, white) 35%,
+      color-mix(in oklab, var(--primary) 66%, white) 50%,
+      color-mix(in oklab, var(--foreground) 86%, white) 65%
+    );
+    background-size: 220% auto;
+    color: transparent;
+    -webkit-background-clip: text;
+    background-clip: text;
+    animation: shimmer 5s linear infinite;
+  }
+
+  .glass-card {
+    background: color-mix(in oklab, var(--card) 82%, transparent);
+    border: 1px solid color-mix(in oklab, var(--border) 72%, transparent);
+    backdrop-filter: blur(10px);
+  }
+}

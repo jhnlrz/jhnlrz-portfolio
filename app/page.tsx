@@ -8,11 +8,11 @@ import { Footer } from "@/components/portfolio/footer"
 
 export default function PortfolioPage() {
   return (
-    <div className="relative min-h-screen">
+    <div className="relative min-h-screen overflow-x-clip">
       <Navigation />
       <MobileNav />
       
-      <main className="lg:ml-48 px-6 sm:px-12 lg:px-16 max-w-4xl">
+      <main className="relative z-10 lg:ml-48 px-6 sm:px-12 lg:px-16 max-w-5xl">
         <HeroSection />
         <ProjectsSection />
         <SkillsSection />
@@ -22,8 +22,9 @@ export default function PortfolioPage() {
 
       {/* Decorative background element */}
       <div className="fixed inset-0 -z-10 overflow-hidden pointer-events-none">
-        <div className="absolute top-1/4 right-0 w-96 h-96 bg-primary/5 rounded-full blur-3xl" />
-        <div className="absolute bottom-1/4 left-0 w-64 h-64 bg-primary/3 rounded-full blur-3xl" />
+        <div className="absolute -top-16 right-[-8%] h-112 w-md rounded-full bg-primary/10 blur-3xl animate-float-slow" />
+        <div className="absolute bottom-[8%] left-[-10%] h-88 w-88 rounded-full bg-accent/10 blur-3xl animate-float-slow [animation-delay:1.5s]" />
+        <div className="absolute top-[35%] left-[42%] h-40 w-40 rounded-full bg-primary/10 blur-2xl animate-pulse-glow" />
       </div>
     </div>
   )

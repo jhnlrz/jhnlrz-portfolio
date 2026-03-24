@@ -57,12 +57,12 @@ export function ProjectsSection() {
   const [selectedProject, setSelectedProject] = useState<typeof projects[0] | null>(null)
 
   return (
-    <section id="projects" className="py-20">
+    <section id="projects" className="py-20 animate-fade-up [animation-delay:.18s]">
       <div className="mb-12">
-        <h2 className="text-3xl lg:text-4xl font-bold text-foreground mb-2">
+        <h2 className="text-3xl lg:text-4xl font-bold text-foreground mb-2 text-shimmer">
           Featured Projects
         </h2>
-        <p className="text-muted-foreground">
+        <p className="text-muted-foreground max-w-xl">
           Explore my latest work and innovations
         </p>
       </div>
@@ -72,7 +72,8 @@ export function ProjectsSection() {
           <button
             key={index}
             onClick={() => setSelectedProject(project)}
-            className="group overflow-hidden rounded-xl border border-border/50 bg-card/40 backdrop-blur-sm hover:border-primary/50 transition-all duration-300 hover:shadow-xl hover:shadow-primary/10 hover:-translate-y-1 text-left cursor-pointer w-full"
+            style={{ animationDelay: `${index * 110}ms` }}
+            className="group animate-fade-up overflow-hidden rounded-xl border border-border/50 glass-card hover:border-primary/50 transition-all duration-500 hover:shadow-2xl hover:shadow-primary/20 hover:-translate-y-1 text-left cursor-pointer w-full"
           >
             {/* Image Container */}
             <div className="relative h-48 overflow-hidden bg-muted">
@@ -80,15 +81,15 @@ export function ProjectsSection() {
                 src={project.image}
                 alt={`${project.title} preview`}
                 fill
-                className="object-cover transition-transform duration-500 group-hover:scale-110"
+                className="object-cover transition-transform duration-700 group-hover:scale-110"
               />
-              <div className="absolute inset-0 bg-linear-to-t from-black/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+              <div className="absolute inset-0 bg-linear-to-t from-black/70 via-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
             </div>
 
             {/* Content Container */}
             <div className="p-6 space-y-4">
               <div>
-                <h3 className="font-semibold text-foreground text-lg mb-2 line-clamp-2 group-hover:text-primary transition-colors">
+                <h3 className="font-semibold text-foreground text-lg mb-2 line-clamp-2 group-hover:text-primary transition-colors duration-300">
                   {project.title}
                 </h3>
                 <p className="text-sm text-muted-foreground line-clamp-3 leading-relaxed">
@@ -127,7 +128,7 @@ export function ProjectsSection() {
               )}
 
               {/* View Details Indicator */}
-              <div className="pt-2 text-xs text-primary/60 group-hover:text-primary transition-colors">
+              <div className="pt-2 text-xs text-primary/60 group-hover:text-primary transition-colors duration-300">
                 Click to view details →
               </div>
             </div>
@@ -137,15 +138,15 @@ export function ProjectsSection() {
 
       {/* Project Details Modal */}
       <Dialog open={!!selectedProject} onOpenChange={(open) => !open && setSelectedProject(null)}>
-        <DialogContent className="max-w-2xl max-h-[90vh] overflow-y-auto">
+        <DialogContent className="max-w-2xl max-h-[90vh] overflow-y-auto glass-card border-primary/30">
           {selectedProject && (
             <>
               <DialogHeader>
-                <DialogTitle className="text-2xl">{selectedProject.title}</DialogTitle>
+                <DialogTitle className="text-2xl text-shimmer">{selectedProject.title}</DialogTitle>
               </DialogHeader>
 
               {/* Project Image */}
-              <div className="relative w-full h-64 rounded-lg overflow-hidden">
+              <div className="relative w-full h-64 rounded-lg overflow-hidden border border-border/60">
                 <Image
                   src={selectedProject.image}
                   alt={selectedProject.title}
