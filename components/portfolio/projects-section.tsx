@@ -43,7 +43,7 @@ const projects = [
     featured: false,
   },
   {
-    title: "DTS - NFA Document Tracking System",
+    title: "Document Tracking System (DTS-NFA)",
     description: "The National Food Authority's Document Tracking System is a digital solution designed to manage and monitor the flow of documents within the National Food Authority. It allows staff to log, track, and update document statuses in real-time, ensuring accountability, minimizing misplacement, and streamlining internal workflows. The system also generates reports to support decision-making and maintain organized records.",
     image: "/projects/nfa.png",
     technologies: ["Laravel", "Vue.js", "TypeScript", "Tailwind CSS", "PostgreSQL", "PHP"],
