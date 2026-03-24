@@ -118,15 +118,6 @@ export function ProjectsSection() {
                 )}
               </div>
 
-              {/* Featured Badge */}
-              {project.featured && (
-                <div className="pt-2">
-                  <span className="inline-block px-3 py-1 rounded-full bg-primary/20 text-primary text-xs font-semibold">
-                    Featured
-                  </span>
-                </div>
-              )}
-
               {/* View Details Indicator */}
               <div className="pt-2 text-xs text-primary/60 group-hover:text-primary transition-colors duration-300">
                 Click to view details →
